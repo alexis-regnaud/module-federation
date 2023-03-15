@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { FederatedTypesPlugin } = require('@module-federation/typescript');
 const path = require('path');
 
-const pkg = require("./package.json");
+const pkg = require('./package.json');
 
 module.exports = {
   entry: './src/index',
@@ -11,7 +11,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, 'dist'),
     },
-    port: 3001,
+    port: 3002,
   },
   output: {
     publicPath: 'auto',
@@ -35,10 +35,10 @@ module.exports = {
     new FederatedTypesPlugin({
       disableDownloadingRemoteTypes: true,
       federationConfig: {
-        name: 'host',
+        name: 'remote',
         filename: 'remoteEntry.js',
-        remotes: {
-          remote: 'remote@http://localhost:3002/remoteEntry.js',
+        exposes: {
+          './components/Button': './src/components/Button',
         },
         shared: [{
           react: {
@@ -59,5 +59,3 @@ module.exports = {
     }),
   ],
 };
-
-

@@ -1,16 +1,10 @@
 {
+  "name": "mf-app",
   "private": true,
+  "version": "0.0.0",
   "scripts": {
-    "start": "lerna run --scope @module-federation/* --parallel start",
-    "build": "lerna run --scope @module-federation/* build",
-    "serve": "lerna run --scope @module-federation/* --parallel serve",
-    "clean": "lerna run --scope @module-federation/* --parallel clean",
-    "postinstall": "lerna --scope @module-federation/* bootstrap"
-  },
-  "devDependencies": {
-    "lerna": "3.22.1",
-    "webpack": "^5.42.1",
-    "webpack-cli": "^4.7.2",
-    "webpack-dev-server": "^3.11.2"
+    "start" : "pnpm -stream -parallel -filter \"@mf-app/*\" run start",
+    "build" : "pnpm -stream -parallel -filter \"@mf-app/*\" run build",
+    "postinstall": "pnpm -stream -filter \"@mf-app/*\" install"
   }
 }

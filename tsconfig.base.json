@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "strict": true,
+    "jsx": "react-jsx",
+    "composite": true,
+    "paths": {
+      "remote/*": ["./remote/dist/@mf-types/*"]
+    },
+    "baseUrl": ".",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "files": []
+}
