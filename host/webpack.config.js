@@ -40,12 +40,13 @@ module.exports = {
         remotes: {
           remote: 'remote@http://localhost:3002/remoteEntry.js',
         },
-        shared: [{
-          react: {
-            singleton: true,
-            requiredVersion: pkg.dependencies.react,
-          }},
-          {
+        shared: [
+            ...pkg, {
+              react: {
+                singleton: true,
+                requiredVersion: pkg.dependencies.react,
+              }
+          }, {
             'react-dom': {
               singleton: true,
               requiredVersion: pkg.dependencies['react-dom'],

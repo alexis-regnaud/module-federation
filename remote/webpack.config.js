@@ -40,12 +40,13 @@ module.exports = {
         exposes: {
           './components/Button': './src/components/Button',
         },
-        shared: [{
-          react: {
-            singleton: true,
-            requiredVersion: pkg.dependencies.react,
-          }},
-          {
+        shared: [ {
+            ...pkg,
+            react: {
+              singleton: true,
+              requiredVersion: pkg.dependencies.react,
+            }
+          }, {
             'react-dom': {
               singleton: true,
               requiredVersion: pkg.dependencies['react-dom'],
