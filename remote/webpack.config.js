@@ -41,7 +41,7 @@ module.exports = {
           './components/Button': './src/components/Button',
         },
         shared: [ {
-            ...pkg,
+            ...pkg.dependencies,
             react: {
               singleton: true,
               requiredVersion: pkg.dependencies.react,
