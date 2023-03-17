@@ -40,19 +40,17 @@ module.exports = {
         exposes: {
           './components/Button': './src/components/Button',
         },
-        shared: [ {
-            ...pkg.dependencies,
-            react: {
-              singleton: true,
-              requiredVersion: pkg.dependencies.react,
-            }
-          }, {
-            'react-dom': {
-              singleton: true,
-              requiredVersion: pkg.dependencies['react-dom'],
-            },
-          }
-        ],
+        shared: {
+          ...pkg.dependencies,
+          react: {
+            singleton: true,
+            requiredVersion: pkg.dependencies.react,
+          },
+          'react-dom': {
+            singleton: true,
+            requiredVersion: pkg.dependencies['react-dom'],
+          },
+        },
       }
     }),
     new HtmlWebpackPlugin({
