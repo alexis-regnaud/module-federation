@@ -1,17 +1,20 @@
 import React from "react";
 const RemoteButton = React.lazy(() => import("remote/components/Button"));
 import { ContextTestProvider } from "host/store";
+import { FederatedWrapper } from "./FederatedWrapper";
 
 const App = () => (
   <div>
     <h1>Typescript</h1>
     <h2>App Host</h2>
     <ContextTestProvider value={{ value: "test" }}>
-      <React.Suspense fallback="Loading Button">
+      <FederatedWrapper delayed="Loading Button" error="Error load Button">
         <RemoteButton size="large" />
-        <br />
+      </FederatedWrapper>
+      <br />
+      <FederatedWrapper delayed="Loading Button" error="Error load Button">
         <RemoteButton size="small" />
-      </React.Suspense>
+      </FederatedWrapper>
     </ContextTestProvider>
   </div>
 );
