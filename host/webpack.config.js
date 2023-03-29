@@ -41,7 +41,7 @@ module.exports = {
           "./store": "./src/store",
         },
         remotes: {
-          host: "host@http://localhost:3001/remoteEntry.js",
+          host: "host@http://localhost:3001/remoteEntry.js", //Allow to share the same context instance (https://www.youtube.com/watch?v=njXeMeAu4Sg&t=640s)
           remote: "remote@http://localhost:3002/remoteEntry.js",
         },
         shared: {
