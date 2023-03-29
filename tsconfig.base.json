@@ -5,6 +5,7 @@
     "jsx": "react-jsx",
     "composite": true,
     "paths": {
+      "host/*": ["./host/dist/@mf-types/*"],
       "remote/*": ["./remote/dist/@mf-types/*"]
     },
     "baseUrl": ".",

@@ -3,8 +3,11 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "start" : "pnpm -stream -parallel -filter \"@mf-app/*\" run start",
-    "build" : "pnpm -stream -parallel -filter \"@mf-app/*\" run build",
+    "start": "pnpm -stream -parallel -filter \"@mf-app/*\" run start",
+    "build": "pnpm -stream -parallel -filter \"@mf-app/*\" run build",
     "postinstall": "pnpm -stream -filter \"@mf-app/*\" install"
+  },
+  "dependencies": {
+    "prettier": "^2.8.7"
   }
 }
